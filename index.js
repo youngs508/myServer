@@ -10,8 +10,7 @@ app.get('/movie', function (req, res) {
 })
 
 app.get('/movie/:id', function (req, res) {
-    const selected = movies.filter(el => el.id === req.param.id);
-    res.send(...selected);
+    res.send(movie.filter(el => el.id === req.params.id));
 })
 
 if (ProcessingInstruction.env.NODE_ENV !== "test") {
